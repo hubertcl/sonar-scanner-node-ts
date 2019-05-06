@@ -6,11 +6,11 @@ LABEL description "SonarQube Scanner for NodeJS Typescript environment"
 
 RUN npm install -g tslint typescript
 
-ENV SONAR_SCANNER_VERSION 3.2.0.1227
+ENV SONAR_SCANNER_VERSION 3.3.0.1492
 ENV JAVA_HOME /usr/lib/jvm/java-1.8-openjdk/jre
 ENV PATH $PATH:/sonar-scanner/bin:/usr/lib/jvm/java-1.8-openjdk/jre/bin:/usr/lib/jvm/java-1.8-openjdk/bin
 
-ADD "https://sonarsource.bintray.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip" /
+ADD "https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-${SONAR_SCANNER_VERSION}.zip" /
 
 RUN set -x \
 	&& apk add --no-cache unzip openjdk8-jre \
